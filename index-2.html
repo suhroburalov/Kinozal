@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kinozal — kinolar va seriallar katalogi</title>
+<meta name="description" content="Kinozal — fantastika, drama, dahshat, animatsion va superqahramon kinolari hamda seriallari katalogi: nomi, yili, rejissyori, tavsifi va treyleri.">
+<link rel="canonical" href="https://suhroburalov.github.io/Kinozal/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Kinozal — kinolar va seriallar katalogi">
+<meta property="og:description" content="Kinozal — fantastika, drama, dahshat, animatsion va superqahramon kinolari hamda seriallari katalogi: nomi, yili, rejissyori, tavsifi va treyleri.">
+<meta property="og:url" content="https://suhroburalov.github.io/Kinozal/">
+<meta name="theme-color" content="#071a4d">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Onest:wght@400;500;600&display=swap">
+<style>
+:root{--surface:#10296b;--ink:#ffffff;--muted:#eaf2ff;--line:rgba(255,255,255,.28);--accent:#ffc857;--accent-ink:#071a4d;--gold:#ffc857;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px);background:#000}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:linear-gradient(180deg,#123a8c 0%,#071a4d 45%,#000 100%) no-repeat;color:var(--ink);font:400 16px/1.55 Onest,system-ui,sans-serif}
+.wrap{max-width:1080px;margin:0 auto;padding:0 18px}
+header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 0}
+.logo{font:700 20px Unbounded,system-ui,sans-serif;letter-spacing:-.02em}
+.logo i{font-style:normal;color:var(--accent)}
+input[type=search]{width:min(260px,52vw);padding:10px 14px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);font:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.hero{position:relative;border-radius:22px;overflow:hidden;padding:34px 24px;margin:6px 0 28px;color:#fff;min-height:300px;display:flex;flex-direction:column;justify-content:flex-end;background:linear-gradient(160deg,#050f33 0%,#0f2f7a 55%,#2f6fd0 100%)}
+.hero:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0 46px,rgba(255,255,255,.05) 46px 48px)}
+.hero>*{position:relative}
+.hero h1{font:700 clamp(30px,8vw,56px)/1.05 Unbounded,system-ui,sans-serif;margin:0 0 10px;letter-spacing:-.03em;max-width:12ch}
+.hero p{margin:0 0 18px;max-width:46ch;opacity:.92}
+.meta{font-size:14px;opacity:.85;margin-bottom:8px}
+.btn{display:inline-block;border:0;cursor:pointer;background:#fff;color:#0f2f7a;font:600 15px Onest,sans-serif;padding:12px 22px;border-radius:999px;width:max-content}
+.chips{display:flex;gap:8px;overflow-x:auto;padding:2px 0 14px}
+.chip{flex:none;border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:8px 16px;border-radius:999px;font:500 14px Onest,sans-serif;cursor:pointer}
+.chip[aria-pressed=true]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:16px;padding-bottom:40px}
+.card{background:none;border:0;padding:0;text-align:left;cursor:pointer;color:inherit;font:inherit}
+.poster{aspect-ratio:2/3;border-radius:14px;padding:14px;display:flex;flex-direction:column;justify-content:flex-end;color:#fff;font:700 19px/1.1 Unbounded,system-ui,sans-serif;letter-spacing:-.02em;position:relative;overflow:hidden}
+.poster small{position:absolute;top:10px;right:10px;font:600 12px Onest,sans-serif;background:rgba(0,0,0,.45);padding:3px 8px;border-radius:999px}
+.card h3{margin:10px 0 0;font:600 15px Onest,sans-serif}
+.card span{color:var(--muted);font-size:13px}
+.empty{grid-column:1/-1;color:var(--muted);padding:30px 0}
+dialog{border:0;border-radius:20px;padding:0;max-width:min(440px,92vw);background:var(--surface);color:var(--ink)}
+dialog::backdrop{background:rgba(10,4,8,.6)}
+dialog .poster{border-radius:0;aspect-ratio:16/10;font-size:26px}
+.body{padding:18px 20px 22px}
+.body h2{margin:0 0 6px;font:700 22px Unbounded,sans-serif}
+.body p{margin:10px 0 16px}
+.body .btn{background:var(--accent);color:var(--accent-ink)}
+footer{border-top:1px solid var(--line);padding:26px 0 30px;color:var(--muted);font-size:13px;text-align:center}
+.social{display:flex;gap:30px;justify-content:center;padding:0 0 20px}
+.social a{display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--ink);text-decoration:none;font-size:13px}
+.social .ic{width:50px;height:50px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;background:var(--surface)}
+.social a:hover .ic{border-color:var(--accent);color:var(--accent)}
+.social svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+
+[hidden]{display:none!important}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+a.card{display:block;text-decoration:none}
+.hero a.btn{text-decoration:none}
+.logo a{color:inherit;text-decoration:none}
+.film{display:grid;gap:22px;padding:8px 0 36px}
+@media(min-width:720px){.film{grid-template-columns:320px 1fr;align-items:start}}
+.film .poster{font-size:28px;padding:20px}
+.film h1{font:700 clamp(26px,6vw,40px)/1.1 Unbounded,system-ui,sans-serif;margin:0 0 10px;letter-spacing:-.03em}
+.film .meta{opacity:1;color:var(--muted)}
+.film p{max-width:60ch}
+.back{display:inline-block;margin:0 0 6px;color:var(--ink)}
+.film .btn{background:var(--accent);color:var(--accent-ink);text-decoration:none}
+</style>
+
+</head>
+<body>
+<div class="wrap">
+<header><div class="logo"><a href="index.html">Kino<i>zal</i></a></div><input type="search" id="q" placeholder="Kino qidirish…" aria-label="Kino qidirish"></header>
+<h1 class="sr">Kinozal — kinolar va seriallar katalogi</h1>
+<section class="hero"><div class="meta">Bugungi tanlov · Fantastika · 2025</div><h2 style="font:700 clamp(30px,8vw,52px)/1.05 Unbounded,system-ui,sans-serif;margin:0 0 10px;letter-spacing:-.03em;max-width:12ch">Avatar: Olov va kul</h2><p>Pandoradagi Sully oilasi yo’qotishlardan keyin yangi, shafqatsiz Na’vi qabilasi va odamlarning kuchayib borayotgan tahdidiga duch keladi.</p><a class="btn" href="avatar-olov-va-kul.html">Batafsil</a></section>
+<div class="chips" id="chips" role="group" aria-label="Janrlar"><button class="chip" aria-pressed="true" data-f="Hammasi">Hammasi</button><button class="chip" aria-pressed="false" data-f="Animatsion">Animatsion</button><button class="chip" aria-pressed="false" data-f="Dahshat">Dahshat</button><button class="chip" aria-pressed="false" data-f="Drama">Drama</button><button class="chip" aria-pressed="false" data-f="Fantastika">Fantastika</button><button class="chip" aria-pressed="false" data-f="Sarguzasht">Sarguzasht</button><button class="chip" aria-pressed="false" data-f="Superqahramon">Superqahramon</button><button class="chip" aria-pressed="false" data-f="Triller">Triller</button></div>
+<main class="grid" id="grid">
+<a class="card" href="avatar-olov-va-kul.html" data-g="Fantastika" data-t="avatar: olov va kul avatar: fire and ash"><div class="poster" style="background:linear-gradient(155deg,hsl(18 55% 32%),hsl(58 60% 18%))"><small>2025</small>Avatar: Olov va kul<img src="avatar-olov-va-kul.jpg" alt="Avatar: Olov va kul plakati" loading="lazy" onerror="this.remove()" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></div><h3>Avatar: Olov va kul</h3><span>Film · Fantastika</span></a>
+<a class="card" href="kichik-xonimlar.html" data-g="Drama" data-t="kichik xonimlar little women"><div class="poster" style="background:linear-gradient(155deg,hsl(340 55% 32%),hsl(20 60% 18%))"><small>2019</small>Kichik xonimlar<img src="kichik-xonimlar.jpg" alt="Kichik xonimlar plakati" loading="lazy" onerror="this.remove()" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></div><h3>Kichik xonimlar</h3><span>Film · Drama</span></a>
+<a class="card" href="yengilmas-1-fasl.html" data-g="Animatsion" data-t="yengilmas, 1-fasl invincible, season 1"><div class="poster" style="background:linear-gradient(155deg,hsl(50 55% 32%),hsl(90 60% 18%))"><small>2021</small>Yengilmas, 1-fasl<img src="yengilmas-1-fasl.jpg" alt="Yengilmas, 1-fasl plakati" loading="lazy" onerror="this.remove()" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></div><h3>Yengilmas, 1-fasl</h3><span>Serial · Animatsion</span></a>
+<a class="card" href="yengilmas-2-fasl.html" data-g="Animatsion" data-t="yengilmas, 2-fasl invincible, season 2"><div class="poster" style="background:linear-gradient(155deg,hsl(25 55% 32%),hsl(65 60% 18%))"><small>2023</small>Yengilmas, 2-fasl<img src="yengilmas-2-fasl.jpg" alt="Yengilmas, 2-fasl plakati" loading="lazy" onerror="this.remove()" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></div><h3>Yengilmas, 2-fasl</h3><span>Serial · Animatsion</span></a>
+<a class="card" href="derryga-xush-kelibsiz.html" data-g="Dahshat" data-t="derryga xush kelibsiz it: welcome to derry"><div class="poster" style="background:linear-gradient(155deg,hsl(5 55% 32%),hsl(45 60% 18%))"><small>2025</small>Derryga xush kelibsiz<img src="derryga-xush-kelibsiz.jpg" alt="Derryga xush kelibsiz plakati" loading="lazy" onerror="this.remove()" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></div><h3>Derryga xush kelibsiz</h3><span>Serial · Dahshat</span></a>
+<a class="card" href="apex.html" data-g="Triller" data-t="apex apex"><div class="poster" style="background:linear-gradient(155deg,hsl(150 55% 32%),hsl(190 60% 18%))"><small>2026</small>Apex<img src="apex.jpg" alt="Apex plakati" loading="lazy" onerror="this.remove()" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></div><h3>Apex</h3><span>Film · Triller</span></a>
+<a class="card" href="yigitlar-diabolikal.html" data-g="Animatsion" data-t="yigitlar: diabolikal the boys presents: diabolical"><div class="poster" style="background:linear-gradient(155deg,hsl(290 55% 32%),hsl(330 60% 18%))"><small>2022</small>Yigitlar: Diabolikal<img src="yigitlar-diabolikal.jpg" alt="Yigitlar: Diabolikal plakati" loading="lazy" onerror="this.remove()" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></div><h3>Yigitlar: Diabolikal</h3><span>Serial · Animatsion</span></a>
+<a class="card" href="super-qiz.html" data-g="Superqahramon" data-t="super qiz supergirl"><div class="poster" style="background:linear-gradient(155deg,hsl(215 55% 32%),hsl(255 60% 18%))"><small>2026</small>Super qiz<img src="super-qiz.jpg" alt="Super qiz plakati" loading="lazy" onerror="this.remove()" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></div><h3>Super qiz</h3><span>Film · Superqahramon</span></a>
+<a class="card" href="orgimchak-odam-yangi-kun.html" data-g="Superqahramon" data-t="o’rgimchak odam: yangi kun spider-man: brand new day"><div class="poster" style="background:linear-gradient(155deg,hsl(355 55% 32%),hsl(35 60% 18%))"><small>2026</small>O’rgimchak odam: Yangi kun<img src="orgimchak-odam-yangi-kun.jpg" alt="O’rgimchak odam: Yangi kun plakati" loading="lazy" onerror="this.remove()" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></div><h3>O’rgimchak odam: Yangi kun</h3><span>Film · Superqahramon</span></a>
+<a class="card" href="hayvonlar-shahri-2.html" data-g="Animatsion" data-t="hayvonlar shahri 2 zootopia 2"><div class="poster" style="background:linear-gradient(155deg,hsl(130 55% 32%),hsl(170 60% 18%))"><small>2025</small>Hayvonlar shahri 2<img src="hayvonlar-shahri-2.jpg" alt="Hayvonlar shahri 2 plakati" loading="lazy" onerror="this.remove()" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></div><h3>Hayvonlar shahri 2</h3><span>Film · Animatsion</span></a>
+<a class="card" href="koinot-hukmdorlari.html" data-g="Fantastika" data-t="koinot hukmdorlari masters of the universe"><div class="poster" style="background:linear-gradient(155deg,hsl(265 55% 32%),hsl(305 60% 18%))"><small>2026</small>Koinot hukmdorlari<img src="koinot-hukmdorlari.jpg" alt="Koinot hukmdorlari plakati" loading="lazy" onerror="this.remove()" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></div><h3>Koinot hukmdorlari</h3><span>Film · Fantastika</span></a>
+<a class="card" href="qorquv-kochasi-1994.html" data-g="Dahshat" data-t="qo’rquv ko’chasi: 1994 fear street part one: 1994"><div class="poster" style="background:linear-gradient(155deg,hsl(0 55% 32%),hsl(40 60% 18%))"><small>2021</small>Qo’rquv ko’chasi: 1994<img src="qorquv-kochasi-1994.jpg" alt="Qo’rquv ko’chasi: 1994 plakati" loading="lazy" onerror="this.remove()" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></div><h3>Qo’rquv ko’chasi: 1994</h3><span>Film · Dahshat</span></a>
+<a class="card" href="qorquv-kochasi-1978.html" data-g="Dahshat" data-t="qo’rquv ko’chasi: 1978 fear street part two: 1978"><div class="poster" style="background:linear-gradient(155deg,hsl(10 55% 32%),hsl(50 60% 18%))"><small>2021</small>Qo’rquv ko’chasi: 1978<img src="qorquv-kochasi-1978.jpg" alt="Qo’rquv ko’chasi: 1978 plakati" loading="lazy" onerror="this.remove()" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></div><h3>Qo’rquv ko’chasi: 1978</h3><span>Film · Dahshat</span></a>
+<a class="card" href="qorquv-kochasi-1666.html" data-g="Dahshat" data-t="qo’rquv ko’chasi: 1666 fear street part three: 1666"><div class="poster" style="background:linear-gradient(155deg,hsl(350 55% 32%),hsl(30 60% 18%))"><small>2021</small>Qo’rquv ko’chasi: 1666<img src="qorquv-kochasi-1666.jpg" alt="Qo’rquv ko’chasi: 1666 plakati" loading="lazy" onerror="this.remove()" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></div><h3>Qo’rquv ko’chasi: 1666</h3><span>Film · Dahshat</span></a>
+<a class="card" href="moana.html" data-g="Sarguzasht" data-t="moana moana (live-action)"><div class="poster" style="background:linear-gradient(155deg,hsl(190 55% 32%),hsl(230 60% 18%))"><small>2026</small>Moana<img src="moana.jpg" alt="Moana plakati" loading="lazy" onerror="this.remove()" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></div><h3>Moana</h3><span>Film · Sarguzasht</span></a>
+<p class="empty" id="empty" hidden>Hech narsa topilmadi. Boshqa nom yoki janrni sinab ko’ring.</p>
+</main>
+<footer>
+  <nav class="social" aria-label="Ijtimoiy tarmoqlar">
+    <a href="https://t.me/kinozalrasmiy" target="_blank" rel="noopener" aria-label="Telegram"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 4 3 11l5.5 2L11 20l3-3.5 4.5 3.5z"/><path d="M8.5 13 21 4"/></svg></span></a>
+    <a href="https://www.instagram.com/uralov.suhrob7" target="_blank" rel="noopener" aria-label="Instagram"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r=".8" fill="currentColor"/></svg></span></a>
+    <a href="https://www.youtube.com/@Kinozal_rasmiy" target="_blank" rel="noopener" aria-label="YouTube"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="m10 9 5 3-5 3z" fill="currentColor"/></svg></span></a>
+  </nav>
+  Kinozal filmlarni joylamaydi, faqat ma’lumot beradi. Barcha nomlar tegishli huquq egalariga tegishli.
+</footer>
+</div>
+<script>
+var g="Hammasi",q=document.getElementById("q"),cs=document.querySelectorAll(".card");
+function run(){var s=q.value.trim().toLowerCase(),n=0;cs.forEach(function(c){var ok=(g==="Hammasi"||c.dataset.g===g)&&c.dataset.t.indexOf(s)>-1;c.hidden=!ok;if(ok)n++});document.getElementById("empty").hidden=n>0}
+document.getElementById("chips").addEventListener("click",function(e){var b=e.target.closest("[data-f]");if(!b)return;g=b.dataset.f;document.querySelectorAll(".chip").forEach(function(x){x.setAttribute("aria-pressed",x===b)});run()});
+q.addEventListener("input",run);
+</script>
+</body>
+</html>
