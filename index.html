@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kinozal — kinolar katalogi</title>
+<meta name="description" content="Kinozal — janr bo’yicha saralangan kinolar katalogi: triller, drama, fantastika, komediya va sarguzasht filmlari. Qidiring va tafsilotlarni ko’ring.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Kinozal — kinolar katalogi">
+<meta property="og:description" content="Janr bo’yicha saralangan kinolar katalogi. Qidiring, tanlang, tomosha qiling.">
+<meta name="theme-color" content="#071a4d">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Onest:wght@400;500;600&display=swap">
+<style>
+:root{--surface:#10296b;--ink:#ffffff;--muted:#eaf2ff;--line:rgba(255,255,255,.28);--accent:#ffc857;--accent-ink:#071a4d;--gold:#ffc857;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px);background:#000}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:linear-gradient(180deg,#123a8c 0%,#071a4d 45%,#000 100%) no-repeat;color:var(--ink);font:400 16px/1.55 Onest,system-ui,sans-serif}
+.wrap{max-width:1080px;margin:0 auto;padding:0 18px}
+header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 0}
+.logo{font:700 20px Unbounded,system-ui,sans-serif;letter-spacing:-.02em}
+.logo i{font-style:normal;color:var(--accent)}
+input[type=search]{width:min(260px,52vw);padding:10px 14px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);font:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.hero{position:relative;border-radius:22px;overflow:hidden;padding:34px 24px;margin:6px 0 28px;color:#fff;min-height:300px;display:flex;flex-direction:column;justify-content:flex-end;background:linear-gradient(160deg,#050f33 0%,#0f2f7a 55%,#2f6fd0 100%)}
+.hero:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0 46px,rgba(255,255,255,.05) 46px 48px)}
+.hero>*{position:relative}
+.hero h1{font:700 clamp(30px,8vw,56px)/1.05 Unbounded,system-ui,sans-serif;margin:0 0 10px;letter-spacing:-.03em;max-width:12ch}
+.hero p{margin:0 0 18px;max-width:46ch;opacity:.92}
+.meta{font-size:14px;opacity:.85;margin-bottom:8px}
+.btn{display:inline-block;border:0;cursor:pointer;background:#fff;color:#0f2f7a;font:600 15px Onest,sans-serif;padding:12px 22px;border-radius:999px;width:max-content}
+.chips{display:flex;gap:8px;overflow-x:auto;padding:2px 0 14px}
+.chip{flex:none;border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:8px 16px;border-radius:999px;font:500 14px Onest,sans-serif;cursor:pointer}
+.chip[aria-pressed=true]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:16px;padding-bottom:40px}
+.card{background:none;border:0;padding:0;text-align:left;cursor:pointer;color:inherit;font:inherit}
+.poster{aspect-ratio:2/3;border-radius:14px;padding:14px;display:flex;flex-direction:column;justify-content:flex-end;color:#fff;font:700 19px/1.1 Unbounded,system-ui,sans-serif;letter-spacing:-.02em;position:relative;overflow:hidden}
+.poster small{position:absolute;top:10px;right:10px;font:600 12px Onest,sans-serif;background:rgba(0,0,0,.45);padding:3px 8px;border-radius:999px}
+.card h3{margin:10px 0 0;font:600 15px Onest,sans-serif}
+.card span{color:var(--muted);font-size:13px}
+.empty{grid-column:1/-1;color:var(--muted);padding:30px 0}
+dialog{border:0;border-radius:20px;padding:0;max-width:min(440px,92vw);background:var(--surface);color:var(--ink)}
+dialog::backdrop{background:rgba(10,4,8,.6)}
+dialog .poster{border-radius:0;aspect-ratio:16/10;font-size:26px}
+.body{padding:18px 20px 22px}
+.body h2{margin:0 0 6px;font:700 22px Unbounded,sans-serif}
+.body p{margin:10px 0 16px}
+.body .btn{background:var(--accent);color:var(--accent-ink)}
+footer{border-top:1px solid var(--line);padding:26px 0 30px;color:var(--muted);font-size:13px;text-align:center}
+.social{display:flex;gap:30px;justify-content:center;padding:0 0 20px}
+.social a{display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--ink);text-decoration:none;font-size:13px}
+.social .ic{width:50px;height:50px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;background:var(--surface)}
+.social a:hover .ic{border-color:var(--accent);color:var(--accent)}
+.social svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="logo">Kino<i>zal</i></div>
+    <input type="search" id="q" placeholder="Kino qidirish…" aria-label="Kino qidirish">
+  </header>
+
+  <section class="hero" id="hero"></section>
+
+  <div class="chips" id="chips" role="group" aria-label="Janrlar"></div>
+  <main class="grid" id="grid"></main>
+
+  <footer>
+  <nav class="social" aria-label="Ijtimoiy tarmoqlar">
+    <a href="https://t.me/kinozalrasmiy" target="_blank" rel="noopener" aria-label="Telegram"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 4 3 11l5.5 2L11 20l3-3.5 4.5 3.5z"/><path d="M8.5 13 21 4"/></svg></span></a>
+    <a href="https://www.instagram.com/uralov.suhrob7" target="_blank" rel="noopener" aria-label="Instagram"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r=".8" fill="currentColor"/></svg></span></a>
+    <a href="https://www.youtube.com/@Kinozal_rasmiy" target="_blank" rel="noopener" aria-label="YouTube"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="m10 9 5 3-5 3z" fill="currentColor"/></svg></span></a>
+  </nav>
+  Kinozal — namunaviy katalog. Barcha filmlar xayoliy.
+</footer>
+</div>
+
+<dialog id="dlg"></dialog>
+
+<script>
+var MOVIES=[
+{t:"Tun shimoli",g:"Triller",y:2025,m:118,r:8.1,h:350,d:"Qor bosgan chegara shaharchasida g’oyib bo’lgan kuryer izidan tushgan tergovchi, hamma yolg’on gapirayotganini sezadi."},
+{t:"Oltin qum",g:"Sarguzasht",y:2024,m:126,r:7.6,h:38,d:"Uch do’st eski xarita bo’yicha Qizilqum bag’rida yo’qolgan karvon xazinasini qidiradi."},
+{t:"Samarqand soyalari",g:"Drama",y:2025,m:109,r:8.4,h:265,d:"Usta naqqosh va uning shogirdi o’rtasidagi sukunat bir yozda butun mahallani o’zgartirib yuboradi."},
+{t:"Oxirgi bekat",g:"Fantastika",y:2026,m:132,r:7.9,h:215,d:"Metroning yopilgan bekatidan har kecha bir xil poyezd o’tadi. Unga chiqqanlar qaytmaydi."},
+{t:"Choyxona sirlari",g:"Komediya",y:2023,m:98,r:7.2,h:28,d:"Bir choyxonaning yangi egasi meros bo’lib qolgan oshxona daftarini topadi va ish chalkashib ketadi."},
+{t:"Sahro yuragi",g:"Drama",y:2024,m:114,r:7.8,h:18,d:"Cho’pon qizning shahardagi o’qish orzusi oilasining an’analari bilan to’qnashadi."},
+{t:"Yulduzlar yo’li",g:"Fantastika",y:2026,m:121,r:8.0,h:245,d:"Kichik kuzatuv stansiyasi osmondan kelayotgan g’alati signalni birinchi bo’lib qabul qiladi."},
+{t:"Qayiq izidan",g:"Sarguzasht",y:2025,m:104,r:7.4,h:195,d:"Amudaryo bo’ylab qilingan sayohat uch avlodni bir qayiqda birlashtiradi."},
+{t:"Kulgi karvoni",g:"Komediya",y:2024,m:95,r:6.9,h:48,d:"Sayyor sirk to’dasi to’y mavsumida ish topish uchun har qanday ishga kirishadi."},
+{t:"Qorong’i daryo",g:"Triller",y:2026,m:112,r:7.7,h:330,d:"Gidrolog daryo qirg’og’idan topilgan g’alati qurilmaning kimniki ekanini aniqlashga urinadi."}
+];
+var genre="Hammasi",$=function(i){return document.getElementById(i)};
+function bg(h){return "linear-gradient(155deg,hsl("+h+" 55% 32%),hsl("+((h+40)%360)+" 60% 18%))"}
+function poster(m,extra){return '<div class="poster" style="background:'+bg(m.h)+'">'+(extra||'')+m.t+'</div>'}
+
+function hero(){var m=MOVIES[3];
+ $("hero").innerHTML='<div class="meta">Bugungi tanlov · '+m.g+' · '+m.y+'</div><h1>'+m.t+'</h1><p>'+m.d+'</p><button class="btn" data-i="3">Batafsil</button>';}
+
+function chips(){var gs=["Hammasi"].concat(MOVIES.map(function(m){return m.g}).filter(function(v,i,a){return a.indexOf(v)===i}));
+ $("chips").innerHTML=gs.map(function(g){return '<button class="chip" aria-pressed="'+(g===genre)+'" data-g="'+g+'">'+g+'</button>'}).join("");}
+
+function grid(){var q=$("q").value.trim().toLowerCase();
+ var list=MOVIES.map(function(m,i){m.i=i;return m}).filter(function(m){return (genre==="Hammasi"||m.g===genre)&&m.t.toLowerCase().indexOf(q)>-1});
+ $("grid").innerHTML=list.length?list.map(function(m){return '<button class="card" data-i="'+m.i+'">'+poster(m,'<small>★ '+m.r+'</small>')+'<h3>'+m.t+'</h3><span>'+m.g+' · '+m.y+'</span></button>'}).join(""):'<p class="empty">Hech narsa topilmadi. Boshqa nom yoki janrni sinab ko’ring.</p>';}
+
+function open(i){var m=MOVIES[i];
+ $("dlg").innerHTML=poster(m)+'<div class="body"><div class="meta" style="color:var(--muted)">'+m.g+' · '+m.y+' · '+m.m+' daq · ★ '+m.r+'</div><h2>'+m.t+'</h2><p>'+m.d+'</p><form method="dialog"><button class="btn">Yopish</button></form></div>';
+ $("dlg").showModal();}
+
+document.addEventListener("click",function(e){
+ var c=e.target.closest("[data-i]");if(c){open(+c.dataset.i);return}
+ var g=e.target.closest("[data-g]");if(g){genre=g.dataset.g;chips();grid()}});
+$("dlg").addEventListener("click",function(e){if(e.target===this)this.close()});
+$("q").addEventListener("input",grid);
+hero();chips();grid();
+</script>
+</body>
+</html>
